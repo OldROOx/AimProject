@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvbvlb4e3qri1"]
+
+[ext_resource type="Script" uid="uid://ch75ut2wq3wt" path="res://Persona/user.gd" id="1_sbaoe"]
+[ext_resource type="PackedScene" uid="uid://bi1r07uhprctv" path="res://Objetos/ui.tscn" id="3_hgq0i"]
+[ext_resource type="PackedScene" uid="uid://bfuivouatdp5r" path="res://Objetos/remington_870_shotgun_-_animated.glb" id="3_pphrk"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hgq0i"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_pphrk"]
+sky_material = SubResource("ProceduralSkyMaterial_hgq0i")
+
+[sub_resource type="Environment" id="Environment_jtxtf"]
+background_mode = 2
+sky = SubResource("Sky_pphrk")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hgq0i"]
+
+[node name="Persona" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jtxtf")
+
+[node name="User" type="CharacterBody3D" parent="."]
+script = ExtResource("1_sbaoe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="User"]
+shape = SubResource("CapsuleShape3D_hgq0i")
+
+[node name="Camera3D" type="Camera3D" parent="User"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.564466, -0.452703)
+
+[node name="UI" parent="User/Camera3D" instance=ExtResource("3_hgq0i")]
+
+[node name="Pistola" parent="User/Camera3D" instance=ExtResource("3_pphrk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.52, 0.596519, -0.408545, -0.648499)

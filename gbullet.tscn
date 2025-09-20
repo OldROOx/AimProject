@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctld60ibn4lrl"]
+
+[ext_resource type="Script" uid="uid://bi4b3gumrrff7" path="res://gbullet.gd" id="1_agejh"]
+[ext_resource type="Script" uid="uid://c1gm5v40a3msi" path="res://rigid_body_3d.gd" id="2_ssbgh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_agejh"]
+albedo_color = Color(0.7081, 0.0982441, 1.92523e-07, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_ssbgh"]
+material = SubResource("StandardMaterial3D_agejh")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_agejh"]
+radius = 0.1
+
+[node name="Gbullet" type="Node3D"]
+script = ExtResource("1_agejh")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+mass = 0.043
+gravity_scale = 2.275
+continuous_cd = true
+contact_monitor = true
+script = ExtResource("2_ssbgh")
+
+[node name="Bala" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(1.29994e-10, -0.00297393, -0.199978, -0.2, -8.74228e-09, 0, -8.74131e-09, 0.199978, -0.00297393, 0, 0, 0)
+mesh = SubResource("SphereMesh_ssbgh")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_agejh")

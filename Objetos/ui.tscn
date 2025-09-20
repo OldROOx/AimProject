@@ -1,0 +1,137 @@
+[gd_scene load_steps=6 format=3 uid="uid://bi1r07uhprctv"]
+
+[ext_resource type="FontFile" uid="uid://b6p8siu564osw" path="res://font/digital-7.ttf" id="2_v7b1f"]
+
+[sub_resource type="GDScript" id="GDScript_v7b1f"]
+script/source = "extends Control
+
+@onready var DatosX = $Datos/DatosX
+@onready var DatosY = $Datos/DatosY
+@onready var DatosZ = $Datos/DatosZ
+
+@onready var velocity = $Label/Label
+func ShowDatos(x,y,z):
+	DatosX.text = \"X: \" + str(x)
+	DatosY.text = \"Y: \" + str(y)
+	DatosZ.text = \"Z: \" + str(z)
+
+func ShowVelocity(x):
+	velocity.text = (\"X: \" + str(int(x.x)) + \" Y: \" + str(int(x.y)) + \" Z: \"+ str(int(x.z)) )
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_v7b1f"]
+font_size = 30
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vdm18"]
+font_size = 30
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mm5bc"]
+font = ExtResource("2_v7b1f")
+font_size = 20
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_v7b1f")
+metadata/_edit_lock_ = true
+
+[node name="Datos" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 17.0
+offset_right = 95.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("2_v7b1f")
+theme_override_font_sizes/font_size = 30
+text = "Datos"
+label_settings = SubResource("LabelSettings_v7b1f")
+
+[node name="DatosX" type="Label" parent="Datos"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 32.0
+offset_right = 70.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("2_v7b1f")
+theme_override_font_sizes/font_size = 30
+text = "X"
+label_settings = SubResource("LabelSettings_vdm18")
+
+[node name="DatosY" type="Label" parent="Datos"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 64.0
+offset_right = 69.0
+offset_bottom = 87.0
+theme_override_fonts/font = ExtResource("2_v7b1f")
+theme_override_font_sizes/font_size = 30
+text = "Y"
+label_settings = SubResource("LabelSettings_vdm18")
+
+[node name="DatosZ" type="Label" parent="Datos"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 96.0
+offset_right = 68.0
+offset_bottom = 119.0
+theme_override_fonts/font = ExtResource("2_v7b1f")
+theme_override_font_sizes/font_size = 30
+text = "Z"
+label_settings = SubResource("LabelSettings_vdm18")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.923
+anchor_right = 0.515
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = 5.896
+offset_right = 16.72
+grow_horizontal = 2
+grow_vertical = 0
+text = "Velocity"
+label_settings = SubResource("LabelSettings_mm5bc")
+
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.5
+offset_top = -23.0
+offset_right = 30.5
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_mm5bc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.0117647, 0, 1)

@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvk4ft8tvblu0"]
+
+[ext_resource type="PackedScene" uid="uid://bfuivouatdp5r" path="res://Objetos/remington_870_shotgun_-_animated.glb" id="1_ecjeg"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_ecjeg")]
+
+[node name="Skeleton3D" parent="Sketchfab_model/36b416de8cae415281ffefce82ad5ccb_fbx/Object_2/RootNode/Null/Object_5" index="0"]
+bones/2/position = Vector3(-9.5415, -40.2913, -11.7129)
+bones/2/rotation = Quaternion(0.609402, 0.751766, -0.0636487, -0.243774)
+bones/3/rotation = Quaternion(-0.174259, -0.527497, 0.40881, 0.724055)
+bones/4/rotation = Quaternion(0.22419, 0.429049, 0.0292856, 0.874527)
+bones/5/rotation = Quaternion(0.0670252, -0.389758, -0.128468, 0.909446)
+bones/6/rotation = Quaternion(0.00236246, 0.150133, -1.75095e-06, 0.988663)
+bones/7/rotation = Quaternion(0.0414014, 0.149908, -0.065715, 0.985645)
+bones/10/rotation = Quaternion(-0.0417131, 0.164433, 0.442345, 0.880655)
+bones/11/rotation = Quaternion(-0.225262, 0.0189724, 0.00438759, 0.974104)
+bones/12/rotation = Quaternion(-0.278884, -0.0322692, -0.00817611, 0.959748)
+bones/15/rotation = Quaternion(-0.257199, -0.03176, 0.503906, 0.823965)
+bones/16/rotation = Quaternion(-0.349136, 0.0322201, 0.0120126, 0.936441)
+bones/17/rotation = Quaternion(-0.227661, -0.039797, 0.0891957, 0.96883)
+bones/21/rotation = Quaternion(0.585822, 0.704457, 0.235104, 0.324467)
+bones/22/rotation = Quaternion(-0.160828, 0.0262664, 0.00428152, 0.986624)
+bones/23/rotation = Quaternion(-0.327117, -0.00753342, -0.00260749, 0.94495)
+bones/26/rotation = Quaternion(0.516095, 0.660102, 0.341338, 0.425911)
+bones/27/rotation = Quaternion(-0.0846437, -0.0412207, -0.00350451, 0.995552)
+bones/28/rotation = Quaternion(-0.0975821, -0.0114705, -0.00112493, 0.995161)
+bones/31/position = Vector3(-35.7614, -0.160234, -52.9397)
+bones/31/rotation = Quaternion(0.108402, 0.981284, 0.0610325, 0.146991)
+bones/32/rotation = Quaternion(0.0151679, 0.581584, -0.13811, 0.801533)
+bones/33/rotation = Quaternion(-0.17127, -0.272786, -0.012411, 0.946626)
+bones/34/rotation = Quaternion(0.114212, 0.400791, 0.149796, 0.896595)
+bones/35/rotation = Quaternion(-0.0671014, -0.103508, 0.174933, 0.976822)
+bones/36/rotation = Quaternion(-0.237769, -0.116634, -0.0336922, 0.963705)
+bones/40/rotation = Quaternion(-0.371462, -0.0180796, -0.00723493, 0.928244)
+bones/41/rotation = Quaternion(-0.266188, 0.135051, 0.0252936, 0.954078)
+bones/45/rotation = Quaternion(-0.151819, 0.0206817, -0.224791, 0.962285)
+bones/46/rotation = Quaternion(-0.606145, -0.0274104, -0.0284863, 0.794371)
+bones/50/rotation = Quaternion(-0.603911, -0.487665, 0.629349, 0.0373423)
+bones/55/rotation = Quaternion(-0.590005, -0.417047, 0.687741, 0.0705624)
+
+[node name="remington870_base" parent="Sketchfab_model/36b416de8cae415281ffefce82ad5ccb_fbx/Object_2/RootNode" index="2"]
+transform = Transform3D(-0.616134, 0.181677, 0.766402, -0.142739, 0.931168, -0.335487, -0.7746, -0.316101, -0.547792, -11.8453, -3.23916, 5.52625)
+
+[node name="remington870_trigger" parent="Sketchfab_model/36b416de8cae415281ffefce82ad5ccb_fbx/Object_2/RootNode/remington870_base" index="1"]
+transform = Transform3D(1, 6.31089e-30, -8.96831e-44, -6.31089e-30, 1, -1.42109e-14, 0, 1.42109e-14, 1, 8.88178e-16, -0.838398, 9.28845)
+
+[node name="remington870_pump" parent="Sketchfab_model/36b416de8cae415281ffefce82ad5ccb_fbx/Object_2/RootNode/remington870_base" index="2"]
+transform = Transform3D(1, 1.57772e-30, -2.24208e-44, -1.57772e-30, 1, -1.42109e-14, 0, 1.42109e-14, 1, 1.65946e-15, -0.689452, 57.3428)
+
+[node name="remington870_lid" parent="Sketchfab_model/36b416de8cae415281ffefce82ad5ccb_fbx/Object_2/RootNode/remington870_base" index="3"]
+transform = Transform3D(1, -7.94912e-17, -1.49046e-17, 7.94912e-17, 1, -5.33457e-09, 1.49046e-17, 5.33457e-09, 1, 8.88178e-16, -0.309422, 20.1456)
+
+[node name="remington870_slug" parent="Sketchfab_model/36b416de8cae415281ffefce82ad5ccb_fbx/Object_2/RootNode/remington870_base" index="4"]
+transform = Transform3D(1, -1.99677e-08, -1.55283e-08, 1.99677e-08, 1, 1.00928e-07, 1.55283e-08, -1.00928e-07, 1, 1.54702e-07, 1.21614, 22.0045)

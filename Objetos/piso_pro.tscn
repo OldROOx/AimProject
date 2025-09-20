@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://0xpmpnnlvrtg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_re120"]
+size = Vector3(30, 1, 30)
+
+[sub_resource type="MultiMesh" id="MultiMesh_pio6s"]
+
+[node name="PisoPro" type="Node3D"]
+
+[node name="Plane" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_re120")
+
+[node name="Grass" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("MultiMesh_pio6s")
